@@ -1,160 +1,153 @@
-/* =====================================================
-   ROHANI 98
-   Main Website JavaScript
-===================================================== */
+document.addEventListener("DOMContentLoaded", function () {
 
-document.addEventListener("DOMContentLoaded", () => {
+    /* ================= MOBILE MENU ================= */
 
-    /* =================================================
-       ELEMENTS
-    ================================================= */
+    const menuToggle =
+        document.getElementById("menuToggle");
 
-    const menuBtn = document.getElementById("menuBtn");
-
-    const nav = document.querySelector("nav");
-
-    const navLinks = document.getElementById("navLinks");
-
-    const topBtn = document.getElementById("topBtn");
-
-    const year = document.getElementById("year");
+    const navMenu =
+        document.getElementById("navMenu");
 
 
-    /* =================================================
-       MOBILE MENU
-    ================================================= */
+    if (menuToggle && navMenu) {
 
-    if (menuBtn && nav && navLinks) {
+        menuToggle.addEventListener(
+            "click",
+            function () {
 
-        menuBtn.addEventListener("click", () => {
+                navMenu.classList.toggle("active");
 
-            nav.classList.toggle("active");
+            }
+        );
 
-            const isOpen = nav.classList.contains("active");
 
-            menuBtn.setAttribute(
-                "aria-expanded",
-                isOpen ? "true" : "false"
+        const navLinks =
+            navMenu.querySelectorAll("a");
+
+
+        navLinks.forEach(function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    navMenu.classList.remove("active");
+
+                }
             );
 
         });
 
-
-        /* Close menu after clicking a link */
-
-        navLinks.querySelectorAll("a").forEach(link => {
-
-            link.addEventListener("click", () => {
-
-                nav.classList.remove("active");
-
-                menuBtn.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-            });
-
-        });
-
     }
 
 
-    /* =================================================
-       BACK TO TOP BUTTON
-    ================================================= */
+    /* ================= CURRENT YEAR ================= */
 
-    window.addEventListener("scroll", () => {
-
-        if (!topBtn) {
-            return;
-        }
+    const currentYear =
+        document.getElementById("currentYear");
 
 
-        if (window.scrollY > 400) {
+    if (currentYear) {
 
-            topBtn.classList.add("show");
-
-        } else {
-
-            topBtn.classList.remove("show");
-
-        }
-
-    });
-
-
-    /* =================================================
-       TOP BUTTON CLICK
-    ================================================= */
-
-    if (topBtn) {
-
-        topBtn.addEventListener("click", () => {
-
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-
-        });
-
-    }
-
-
-    /* =================================================
-       CURRENT YEAR
-    ================================================= */
-
-    if (year) {
-
-        year.textContent =
+        currentYear.textContent =
             new Date().getFullYear();
 
     }
 
 
-    /* =================================================
-       COMING SOON BUTTONS
-    ================================================= */
+    /* ================= COMING SOON ================= */
 
-    document
-        .querySelectorAll("[data-coming-soon]")
-        .forEach(button => {
-
-            button.addEventListener("click", () => {
-
-                alert(
-                    "این برنامه هنوز برای دانلود آماده نشده است."
-                );
-
-            });
-
-        });
+    const comingSoonButtons =
+        document.querySelectorAll(
+            "[data-coming-soon]"
+        );
 
 
-    /* =================================================
-       DOWNLOAD BUTTON
-    ================================================= */
+    comingSoonButtons.forEach(
+        function (button) {
 
-    const downloadButton =
-        document.querySelector(".download-btn");
+            button.addEventListener(
+                "click",
+                function () {
+
+                    alert(
+                        "این برنامه به‌زودی در سایت منتشر خواهد شد."
+                    );
+
+                }
+            );
+
+        }
+    );
 
 
-    if (downloadButton) {
+    /* ================= TOP BUTTON ================= */
 
-        downloadButton.addEventListener(
+    const topButton =
+        document.getElementById("topButton");
+
+
+    if (topButton) {
+
+        window.addEventListener(
+            "scroll",
+            function () {
+
+                if (window.scrollY > 400) {
+
+                    topButton.style.display =
+                        "block";
+
+                } else {
+
+                    topButton.style.display =
+                        "none";
+
+                }
+
+            }
+        );
+
+
+        topButton.addEventListener(
             "click",
-            () => {
+            function () {
 
-                console.log(
-                    "دانلود Rohani شروع شد."
-                );
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
 
             }
         );
 
     }
 
+
+    /* ================= DOWNLOAD LOG ================= */
+
+    const downloadLinks =
+        document.querySelectorAll(
+            'a[download]'
+        );
+
+
+    downloadLinks.forEach(
+        function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    console.log(
+                        "دانلود برنامه:",
+                        link.getAttribute("download")
+                    );
+
+                }
+            );
+
+        }
+    );
 
 });
