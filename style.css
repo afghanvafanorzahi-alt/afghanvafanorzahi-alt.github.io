@@ -1,300 +1,792 @@
-/* ROHANI 98 - style.css */
+/* =====================================================
+   ROHANI 98
+   Main Website Styles
+===================================================== */
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+/* =====================================================
+   HTML
+===================================================== */
+
 html {
     scroll-behavior: smooth;
 }
 
+
+/* =====================================================
+   BODY
+===================================================== */
+
 body {
     font-family: Tahoma, Arial, sans-serif;
+
     direction: rtl;
+
     background: #0b1020;
+
     color: #f5f7ff;
+
     line-height: 1.8;
 }
 
+
+/* =====================================================
+   LINKS
+===================================================== */
+
 a {
     color: inherit;
+
     text-decoration: none;
 }
 
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
 .container {
     width: min(1120px, 92%);
+
     margin: auto;
 }
 
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
 .navbar {
     position: sticky;
+
     top: 0;
+
     z-index: 1000;
-    background: rgba(11, 16, 32, 0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255,255,255,.08);
+
+    background: rgba(11, 16, 32, 0.94);
+
+    backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
+
 
 .nav-inner {
     min-height: 72px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     gap: 20px;
 }
 
+
+/* =====================================================
+   LOGO
+===================================================== */
+
 .logo {
     font-family: Arial, sans-serif;
-    font-size: 26px;
+
+    font-size: 27px;
+
     font-weight: 900;
+
     letter-spacing: 1px;
 }
+
 
 .logo span {
     color: #55aaff;
 }
 
+
+/* =====================================================
+   NAV LINKS
+===================================================== */
+
 .nav-links {
     display: flex;
+
     list-style: none;
+
     gap: 8px;
 }
 
+
 .nav-links a {
     display: block;
+
     padding: 8px 14px;
+
     border-radius: 10px;
+
     color: #dce5ff;
-    transition: .2s;
+
+    transition: 0.25s;
 }
 
+
 .nav-links a:hover {
-    background: rgba(85,170,255,.14);
-    color: #fff;
+    background: rgba(85, 170, 255, 0.14);
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
 }
+
+
+/* =====================================================
+   MOBILE MENU BUTTON
+===================================================== */
 
 .menu-btn {
     display: none;
+
     border: 0;
+
     background: transparent;
+
     color: white;
+
     font-size: 28px;
+
     cursor: pointer;
 }
 
+
+/* =====================================================
+   HERO
+===================================================== */
+
 .hero {
     min-height: 78vh;
+
     display: grid;
+
     place-items: center;
+
     text-align: center;
+
     padding: 80px 0;
+
     background:
-        radial-gradient(circle at 50% 20%, rgba(45,126,255,.22), transparent 38%),
-        linear-gradient(180deg, #0b1020 0%, #10182d 100%);
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(45, 126, 255, 0.22),
+            transparent 38%
+        ),
+        linear-gradient(
+            180deg,
+            #0b1020 0%,
+            #10182d 100%
+        );
 }
+
 
 .hero-badge {
     display: inline-block;
+
     padding: 7px 15px;
-    border: 1px solid rgba(85,170,255,.35);
+
+    border: 1px solid rgba(85, 170, 255, 0.35);
+
     border-radius: 999px;
+
     color: #8fc7ff;
+
     margin-bottom: 18px;
-    background: rgba(85,170,255,.08);
+
+    background: rgba(85, 170, 255, 0.08);
 }
+
 
 .hero h1 {
     font-family: Arial, sans-serif;
+
     font-size: clamp(48px, 9vw, 92px);
+
     line-height: 1;
+
     letter-spacing: 2px;
+
     margin-bottom: 20px;
 }
+
 
 .hero h1 span {
     color: #55aaff;
 }
 
+
 .hero p {
     max-width: 700px;
+
     margin: 0 auto 28px;
+
     color: #c4cee7;
+
     font-size: 19px;
 }
 
+
+/* =====================================================
+   BUTTON GROUP
+===================================================== */
+
 .buttons {
     display: flex;
+
     justify-content: center;
+
     flex-wrap: wrap;
+
     gap: 12px;
 }
 
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
 .btn {
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
+
     padding: 11px 22px;
+
     border-radius: 12px;
+
     font-weight: bold;
+
     border: 1px solid transparent;
-    transition: .2s;
+
+    transition: 0.25s;
+
     cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 15px;
 }
+
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   PRIMARY BUTTON
+===================================================== */
 
 .btn-primary {
     background: #368cff;
+
     color: white;
+
+    box-shadow:
+        0 8px 25px rgba(54, 140, 255, 0.18);
 }
+
 
 .btn-primary:hover {
-    transform: translateY(-2px);
     background: #5ba3ff;
+
+    box-shadow:
+        0 10px 30px rgba(54, 140, 255, 0.28);
 }
+
+
+/* =====================================================
+   SECONDARY BUTTON
+===================================================== */
 
 .btn-secondary {
-    border-color: rgba(255,255,255,.15);
-    background: rgba(255,255,255,.05);
+    border-color: rgba(255, 255, 255, 0.15);
+
+    background: rgba(255, 255, 255, 0.05);
+
+    color: #ffffff;
 }
 
+
 .btn-secondary:hover {
-    background: rgba(255,255,255,.1);
+    background: rgba(255, 255, 255, 0.1);
 }
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
 
 .section {
     padding: 85px 0;
 }
 
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
 .section-title {
     text-align: center;
+
     margin-bottom: 42px;
 }
 
+
 .section-title h2 {
     font-size: 34px;
+
     margin-bottom: 8px;
 }
+
 
 .section-title p {
     color: #9eabc7;
 }
 
+
+/* =====================================================
+   APPS GRID
+===================================================== */
+
 .apps-grid {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 22px;
 }
 
+
+/* =====================================================
+   CARD
+===================================================== */
+
 .card {
     background: #121a2e;
-    border: 1px solid rgba(255,255,255,.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
     border-radius: 18px;
+
     padding: 25px;
-    transition: .25s;
+
+    transition: 0.25s;
+
+    display: flex;
+
+    flex-direction: column;
 }
+
 
 .card:hover {
     transform: translateY(-5px);
-    border-color: rgba(85,170,255,.35);
+
+    border-color: rgba(85, 170, 255, 0.35);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.18);
 }
+
+
+/* =====================================================
+   APP ICON
+===================================================== */
 
 .app-icon {
     width: 64px;
+
     height: 64px;
+
     display: grid;
+
     place-items: center;
+
     border-radius: 16px;
-    background: rgba(85,170,255,.12);
+
+    background: rgba(85, 170, 255, 0.12);
+
     font-size: 32px;
+
     margin-bottom: 18px;
 }
+
+
+/* =====================================================
+   CARD TITLE
+===================================================== */
 
 .card h3 {
     font-size: 22px;
+
     margin-bottom: 8px;
 }
 
+
+/* =====================================================
+   CARD TEXT
+===================================================== */
+
 .card p {
     color: #aeb9d2;
+
     margin-bottom: 18px;
 }
+
+
+/* =====================================================
+   APP DETAILS
+===================================================== */
+
+.app-details {
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 20px;
+}
+
+
+.app-details span {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 8px;
+
+    background: rgba(85, 170, 255, 0.08);
+
+    color: #8fc7ff;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   DOWNLOAD BUTTON
+===================================================== */
+
+.download-btn {
+    width: 100%;
+
+    margin-top: auto;
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
 
 .about {
     background: #0f1729;
 }
 
+
+/* =====================================================
+   ABOUT BOX
+===================================================== */
+
 .about-box {
     max-width: 850px;
+
     margin: auto;
+
     text-align: center;
+
     background: #121a2e;
-    border: 1px solid rgba(255,255,255,.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
     border-radius: 20px;
-    padding: 35px;
+
+    padding: 40px 35px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.12);
 }
 
-.about-box strong {
+
+/* =====================================================
+   CREATOR ICON
+===================================================== */
+
+.creator-icon {
+    width: 80px;
+
+    height: 80px;
+
+    display: grid;
+
+    place-items: center;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    background: rgba(85, 170, 255, 0.12);
+
+    font-size: 40px;
+}
+
+
+/* =====================================================
+   CREATOR TITLE
+===================================================== */
+
+.about-box h3 {
+    font-size: 26px;
+
+    margin-bottom: 8px;
+
     color: #68b1ff;
 }
+
+
+/* =====================================================
+   CREATOR DESCRIPTION
+===================================================== */
+
+.creator-description {
+    margin-top: 10px;
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
 
 .contact-box {
     text-align: center;
 }
 
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
 footer {
     padding: 28px 0;
+
     text-align: center;
+
     color: #8794b1;
-    border-top: 1px solid rgba(255,255,255,.08);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
     background: #080c17;
 }
 
+
+.footer-creator {
+    margin-top: 5px;
+
+    font-size: 13px;
+
+    color: #64718e;
+}
+
+
+/* =====================================================
+   TOP BUTTON
+===================================================== */
+
 #topBtn {
     position: fixed;
+
     left: 22px;
+
     bottom: 22px;
+
     width: 45px;
+
     height: 45px;
+
     border: 0;
+
     border-radius: 50%;
+
     background: #368cff;
+
     color: white;
-    font-size: 20px;
+
+    font-size: 22px;
+
     cursor: pointer;
-    display: none;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(10px);
+
+    transition: 0.25s;
+
+    box-shadow:
+        0 8px 25px rgba(54, 140, 255, 0.25);
 }
+
 
 #topBtn.show {
-    display: block;
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
 }
 
-@media (max-width: 800px) {
+
+#topBtn:hover {
+    background: #5ba3ff;
+
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 850px) {
+
     .menu-btn {
         display: block;
     }
 
-    .nav-links {
-        display: none;
+
+    nav {
         position: absolute;
+
         top: 72px;
-        right: 4%;
-        left: 4%;
-        padding: 12px;
-        flex-direction: column;
-        background: #121a2e;
-        border: 1px solid rgba(255,255,255,.1);
-        border-radius: 14px;
+
+        right: 0;
+
+        width: 100%;
+
+        background: rgba(11, 16, 32, 0.98);
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+        display: none;
     }
 
-    .nav-links.open {
-        display: flex;
+
+    nav.active {
+        display: block;
     }
+
+
+    .nav-links {
+        flex-direction: column;
+
+        padding: 15px;
+
+        gap: 5px;
+    }
+
+
+    .nav-links a {
+        padding: 12px 15px;
+    }
+
 
     .apps-grid {
         grid-template-columns: 1fr;
     }
 
+
     .hero {
         min-height: 70vh;
+
+        padding: 70px 0;
     }
+
+
+    .hero p {
+        font-size: 17px;
+    }
+
+
+    .section {
+        padding: 65px 0;
+    }
+
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+
+    .about-box {
+        padding: 30px 20px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 500px) {
+
+    .logo {
+        font-size: 23px;
+    }
+
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+
+    .hero-badge {
+        font-size: 13px;
+    }
+
+
+    .buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .buttons .btn {
+        width: 100%;
+    }
+
+
+    .card {
+        padding: 22px;
+    }
+
+
+    #topBtn {
+        left: 15px;
+
+        bottom: 15px;
+    }
+
 }

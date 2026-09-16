@@ -4,20 +4,30 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>ROHANI 98 | برنامه‌ها و پروژه‌ها</title>
 
-    <meta name="description"
-          content="وب‌سایت رسمی ROHANI 98 برای معرفی و انتشار برنامه‌ها و پروژه‌های محمد یوسف روحانی جانان">
+    <meta
+        name="description"
+        content="وب‌سایت رسمی ROHANI 98 برای معرفی و انتشار برنامه‌ها و پروژه‌های محمد یوسف روحانی جانان"
+    >
+
+    <meta
+        name="keywords"
+        content="ROHANI 98, Rohani AI, محمد یوسف روحانی جانان, برنامه, نرم افزار, ربات هوشمند"
+    >
+
+    <meta name="author" content="محمد یوسف روحانی جانان">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- =========================
+     NAVBAR
+========================= -->
 
 <header class="navbar">
 
@@ -31,11 +41,13 @@
             class="menu-btn"
             id="menuBtn"
             aria-label="باز کردن منو"
-            aria-expanded="false">
+            aria-expanded="false"
+        >
             ☰
         </button>
 
         <nav>
+
             <ul class="nav-links" id="navLinks">
 
                 <li>
@@ -55,6 +67,7 @@
                 </li>
 
             </ul>
+
         </nav>
 
     </div>
@@ -62,12 +75,16 @@
 </header>
 
 
-<!-- ================= MAIN ================= -->
+<!-- =========================
+     MAIN
+========================= -->
 
 <main>
 
 
-    <!-- ================= HERO ================= -->
+    <!-- =========================
+         HERO
+    ========================= -->
 
     <section class="hero" id="home">
 
@@ -91,14 +108,16 @@
 
                 <a
                     class="btn btn-primary"
-                    href="#apps">
-                    مشاهده برنامه‌ها
+                    href="#apps"
+                >
+                    💻 مشاهده برنامه‌ها
                 </a>
 
                 <a
                     class="btn btn-secondary"
-                    href="#about">
-                    درباره سازنده
+                    href="#about"
+                >
+                    👨‍💻 درباره سازنده
                 </a>
 
             </div>
@@ -108,7 +127,9 @@
     </section>
 
 
-    <!-- ================= PROGRAMS ================= -->
+    <!-- =========================
+         APPS
+    ========================= -->
 
     <section class="section" id="apps">
 
@@ -130,7 +151,9 @@
             <div class="apps-grid">
 
 
-                <!-- ================= ROHANI AI ================= -->
+                <!-- =========================
+                     ROHANI AI
+                ========================= -->
 
                 <article class="card">
 
@@ -143,33 +166,36 @@
                     </h3>
 
                     <p>
-                        یک دستیار هوشمند فارسی‌زبان برای
-                        گفتگو و کمک در انجام کارهای مختلف.
+                        یک دستیار هوشمند فارسی‌زبان برای گفتگو
+                        و کمک در انجام کارهای مختلف.
                     </p>
 
-                    <p class="app-info">
-                        نسخه: 1.0
-                    </p>
+                    <div class="app-details">
 
-                    <p class="app-info">
-                        سیستم‌عامل: Windows
-                    </p>
+                        <span>
+                            نسخه: 1.0
+                        </span>
 
-                    <!-- DOWNLOAD BUTTON -->
+                        <span>
+                            Windows
+                        </span>
+
+                    </div>
 
                     <a
-                        class="btn btn-primary"
-                        href="downloads/Rohani.exe"
-                        download="Rohani.exe">
-
+                        class="btn btn-primary download-btn"
+                        href="https://github.com/afghanvafanorzahi-alt/afghanvafanorzahi-alt.github.io/releases/latest/download/Rohani.exe"
+                        download="Rohani.exe"
+                    >
                         📥 دانلود Rohani
-
                     </a>
 
                 </article>
 
 
-                <!-- ================= PASSWORD MANAGER ================= -->
+                <!-- =========================
+                     PASSWORD MANAGER
+                ========================= -->
 
                 <article class="card">
 
@@ -182,22 +208,24 @@
                     </h3>
 
                     <p>
-                        برنامه مدیریت رمز عبور برای نگهداری
-                        و مدیریت اطلاعات ورود به‌صورت ساده.
+                        پروژه مدیریت رمز عبور که در آینده
+                        در سایت منتشر خواهد شد.
                     </p>
 
-                    <a
+                    <button
                         class="btn btn-secondary"
-                        href="#">
-
-                        به‌زودی
-
-                    </a>
+                        type="button"
+                        data-coming-soon
+                    >
+                        🔜 به‌زودی
+                    </button>
 
                 </article>
 
 
-                <!-- ================= FUTURE PROJECTS ================= -->
+                <!-- =========================
+                     FUTURE PROJECTS
+                ========================= -->
 
                 <article class="card">
 
@@ -214,13 +242,13 @@
                         معرفی و برای دانلود قرار خواهند گرفت.
                     </p>
 
-                    <a
+                    <button
                         class="btn btn-secondary"
-                        href="#">
-
-                        به‌زودی
-
-                    </a>
+                        type="button"
+                        data-coming-soon
+                    >
+                        🔜 به‌زودی
+                    </button>
 
                 </article>
 
@@ -232,11 +260,14 @@
     </section>
 
 
-    <!-- ================= ABOUT ================= -->
+    <!-- =========================
+         ABOUT
+    ========================= -->
 
     <section
         class="section about"
-        id="about">
+        id="about"
+    >
 
         <div class="container">
 
@@ -255,11 +286,16 @@
 
             <div class="about-box">
 
+                <div class="creator-icon">
+                    👨‍💻
+                </div>
+
+                <h3>
+                    محمد یوسف روحانی جانان
+                </h3>
+
                 <p>
-                    نام سازنده:
-                    <strong>
-                        محمد یوسف روحانی جانان
-                    </strong>
+                    سازنده و توسعه‌دهنده ROHANI 98
                 </p>
 
                 <p>
@@ -268,9 +304,10 @@
                     نرم‌افزاری است.
                 </p>
 
-                <p>
-                    در این وب‌سایت می‌توانید برنامه‌های
-                    ساخته‌شده توسط من را مشاهده و دریافت کنید.
+                <p class="creator-description">
+                    هدف این وب‌سایت معرفی برنامه‌ها،
+                    پروژه‌های آینده و فراهم‌کردن امکان
+                    دریافت نرم‌افزارهای ساخته‌شده است.
                 </p>
 
             </div>
@@ -280,24 +317,31 @@
     </section>
 
 
-    <!-- ================= CONTACT ================= -->
+    <!-- =========================
+         CONTACT
+    ========================= -->
 
     <section
         class="section"
-        id="contact">
+        id="contact"
+    >
 
-        <div class="container contact-box">
+        <div class="container">
 
-            <div class="section-title">
+            <div class="contact-box">
 
-                <h2>
-                    📞 تماس
-                </h2>
+                <div class="section-title">
 
-                <p>
-                    برای ارتباط با سازنده، اطلاعات تماس
-                    را در نسخه نهایی این بخش اضافه می‌کنیم.
-                </p>
+                    <h2>
+                        📞 تماس
+                    </h2>
+
+                    <p>
+                        برای ارتباط با سازنده، اطلاعات تماس
+                        در نسخه‌های بعدی به این بخش اضافه خواهد شد.
+                    </p>
+
+                </div>
 
             </div>
 
@@ -309,35 +353,42 @@
 </main>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
     <div class="container">
 
-        ©
-        <span id="year"></span>
-        ROHANI 98
-        — همه حقوق محفوظ است.
+        <p>
+            © <span id="year"></span>
+            ROHANI 98
+            — همه حقوق محفوظ است.
+        </p>
+
+        <p class="footer-creator">
+            ساخته شده توسط
+            محمد یوسف روحانی جانان
+        </p>
 
     </div>
 
 </footer>
 
 
-<!-- ================= BACK TO TOP ================= -->
+<!-- =========================
+     BACK TO TOP
+========================= -->
 
 <button
     id="topBtn"
     title="بازگشت به بالا"
-    aria-label="بازگشت به بالا">
-
+    aria-label="بازگشت به بالا"
+>
     ↑
-
 </button>
 
-
-<!-- ================= JAVASCRIPT ================= -->
 
 <script src="script.js"></script>
 

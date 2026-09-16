@@ -1,54 +1,160 @@
-// ROHANI 98 - script.js
+/* =====================================================
+   ROHANI 98
+   Main Website JavaScript
+===================================================== */
+
 document.addEventListener("DOMContentLoaded", () => {
+
+    /* =================================================
+       ELEMENTS
+    ================================================= */
+
     const menuBtn = document.getElementById("menuBtn");
+
+    const nav = document.querySelector("nav");
+
     const navLinks = document.getElementById("navLinks");
+
     const topBtn = document.getElementById("topBtn");
+
     const year = document.getElementById("year");
 
-    // Mobile menu
-    if (menuBtn && navLinks) {
+
+    /* =================================================
+       MOBILE MENU
+    ================================================= */
+
+    if (menuBtn && nav && navLinks) {
+
         menuBtn.addEventListener("click", () => {
-            navLinks.classList.toggle("open");
+
+            nav.classList.toggle("active");
+
+            const isOpen = nav.classList.contains("active");
+
             menuBtn.setAttribute(
                 "aria-expanded",
-                navLinks.classList.contains("open") ? "true" : "false"
+                isOpen ? "true" : "false"
             );
+
         });
+
+
+        /* Close menu after clicking a link */
 
         navLinks.querySelectorAll("a").forEach(link => {
+
             link.addEventListener("click", () => {
-                navLinks.classList.remove("open");
-                menuBtn.setAttribute("aria-expanded", "false");
+
+                nav.classList.remove("active");
+
+                menuBtn.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
             });
+
         });
+
     }
 
-    // Back to top button
+
+    /* =================================================
+       BACK TO TOP BUTTON
+    ================================================= */
+
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 400) {
-            topBtn?.classList.add("show");
-        } else {
-            topBtn?.classList.remove("show");
+
+        if (!topBtn) {
+            return;
         }
+
+
+        if (window.scrollY > 400) {
+
+            topBtn.classList.add("show");
+
+        } else {
+
+            topBtn.classList.remove("show");
+
+        }
+
     });
 
-    topBtn?.addEventListener("click", () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
+
+    /* =================================================
+       TOP BUTTON CLICK
+    ================================================= */
+
+    if (topBtn) {
+
+        topBtn.addEventListener("click", () => {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
         });
-    });
 
-    // Automatic current year
-    if (year) {
-        year.textContent = new Date().getFullYear();
     }
 
-    // Download buttons that don't have a real file yet
-    document.querySelectorAll("[data-coming-soon]").forEach(button => {
-        button.addEventListener("click", event => {
-            event.preventDefault();
-            alert("این برنامه هنوز برای دانلود آماده نشده است.");
+
+    /* =================================================
+       CURRENT YEAR
+    ================================================= */
+
+    if (year) {
+
+        year.textContent =
+            new Date().getFullYear();
+
+    }
+
+
+    /* =================================================
+       COMING SOON BUTTONS
+    ================================================= */
+
+    document
+        .querySelectorAll("[data-coming-soon]")
+        .forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                alert(
+                    "این برنامه هنوز برای دانلود آماده نشده است."
+                );
+
+            });
+
         });
-    });
+
+
+    /* =================================================
+       DOWNLOAD BUTTON
+    ================================================= */
+
+    const downloadButton =
+        document.querySelector(".download-btn");
+
+
+    if (downloadButton) {
+
+        downloadButton.addEventListener(
+            "click",
+            () => {
+
+                console.log(
+                    "دانلود Rohani شروع شد."
+                );
+
+            }
+        );
+
+    }
+
+
 });
